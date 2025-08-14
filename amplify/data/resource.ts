@@ -1,5 +1,6 @@
 import * as path from 'path';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
+import * as ecr_assets from 'aws-cdk-lib/aws-ecr-assets';
 import { Construct } from 'constructs';
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
 
@@ -24,7 +25,12 @@ export const data = defineData({
 
 export const addDockerExample = (scope: Construct) => {
   return new lambda.DockerImageFunction(scope, 'say-hello', {
-    code: lambda.DockerImageCode.fromImageAsset(path.join(__dirname, '..', 'functions', 'say-hello')),
+    code: lambda.DockerImageCode.fromImageAsset(
+      path.join(__dirname, '..', 'functions', 'say-hello'),
+      {
+        platform: ecr_assets.Platform.LINUX_AMD64
+      }
+    ),
     memorySize: 512
   })
 }
