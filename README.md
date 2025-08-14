@@ -5,7 +5,7 @@
 
 | | |
 | -- | -- |
-| Configures docker lambda as a separate CDK resource. | ✅ |
+| Configures a lambda with a custom docker image. | ✅ |
 | Deploys via sandbox. | ✅ |
 | Deploys via Amplify hosting/build. | ✅ |
 
