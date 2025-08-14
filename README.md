@@ -1,11 +1,12 @@
-### Branch [`as-independent-cdk`](https://github.com/svidgen/amplify-docker-lambda-testing/tree/as-independent-cdk)
+## Each of these Branches
 
-1. Configures docker lambda as a separate CDK resource.
-1. Deploys successfully via sandbox: `npx ampx sandbox`.
-1. Deploys successfully via Amplify hosting/build using custom build image: `aws/codebuild/amazonlinux-x86_64-standard:5.0`.
+1. [`as-independent-cdk`](https://github.com/svidgen/amplify-docker-lambda-testing/tree/as-independent-cdk)
+1. [`as-define-function`](https://github.com/svidgen/amplify-docker-lambda-testing/tree/as-define-function)
 
-### Main ...
+| | |
+| -- | -- |
+| Configures docker lambda as a separate CDK resource. | ✅ |
+| Deploys via sandbox. | ✅ |
+| Deploys via Amplify hosting/build. | ✅ |
 
-1. Configures docker lambda within `defineFunction`.
-1. Deployes successfully via sandbox: `npx ampx sandbox`.
-1. Testing hosting deployment now ... ⏳
+**REQUIRED:** Amplify build image: `aws/codebuild/amazonlinux-x86_64-standard:5.0`. (Or similar image that includes docker.)
